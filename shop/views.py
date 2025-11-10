@@ -1,6 +1,6 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-
+from django.contrib import admin
+from . import models
 # Create your views here.
-def index(request):
-    return HttpResponse("Hello Shop")
+
+admin.site.register(models.Course)
+admin.site.register(models.Category)
