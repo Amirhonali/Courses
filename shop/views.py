@@ -1,6 +1,8 @@
-from django.contrib import admin
+from django.shortcuts import render
+from django.http import HttpResponse
 from . import models
-# Create your views here.
 
-admin.site.register(models.Course)
-admin.site.register(models.Category)
+# Create your views here.
+def index(request):
+    courses = models.Course.objects.all()
+    return HttpResponse(courses)
