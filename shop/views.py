@@ -6,3 +6,7 @@ from . import models
 def index(request):
     courses = models.Course.objects.all()
     return render(request, 'courses.html', {'courses': courses})
+
+def single_course(request, course_id):
+    course = models.Course.objects.get(pk=course_id)
+    return render(request, 'single_course.html', {'course': course})
